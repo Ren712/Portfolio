@@ -1,17 +1,23 @@
-function saludar() {
-    alert("¡Hola desde JavaScript!");
-  }
+let turno = 0; 
+let nuevoColor = "red";
+let text2 = "x";
 
-  function CBoton(idBoton) {
-    // 1. Obtenemos el botón por su ID
+function CBoton(idBoton) {
     const boton = document.getElementById(idBoton);
-    // 2. Verificamos que el botón exista
+    turno++;
+
+    if(turno%2==0){
+        nuevoColor = "red";
+        text2 = "x";
+    }
+    else{
+        nuevoColor = "blue";
+        text2 = "o";
+    }
+
     if (boton) {
-        // 3. Cambiamos su color de fondo
         boton.style.backgroundColor = nuevoColor;
-        // Opcional: Cambiar el color del texto
-        boton.style.color = 'white'; 
-        // Opcional: Añadir una transición suave (CSS)
-        // boton.style.transition = 'background-color 0.3s ease'; 
+        boton.style.color = "white";
+        boton.innerText = text2;
     }
 }
