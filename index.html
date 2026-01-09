@@ -9,18 +9,24 @@
 </head>
 <body>
     <h1>My First Heading</h1>
-    <p>My first paragraph.</p>
-    <button id="btn1" onclick="CBoton(this.id)">-</button>
-    <button id="btn2" onclick="CBoton(this.id)">-</button>
-    <button id="btn3" onclick="CBoton(this.id)">-</button>
-    <br>
-    <button id="btn4" onclick="CBoton(this.id)">-</button>
-    <button id="btn5" onclick="CBoton(this.id)">-</button>
-    <button id="btn6" onclick="CBoton(this.id)">-</button>
-    <br>
-    <button id="btn7" onclick="CBoton(this.id)">-</button>
-    <button id="btn8" onclick="CBoton(this.id)">-</button>
-    <button id="btn9" onclick="CBoton(this.id)">-</button>
+    <p id="cons">My first paragraph.</p>
+    <table>
+        <tr>
+          <td><button data-fila="0" data-col="0" onclick="jugar(this)">-</button></td>
+          <td><button data-fila="0" data-col="1" onclick="jugar(this)">-</button></td>
+          <td><button data-fila="0" data-col="2" onclick="jugar(this)">-</button></td>
+        </tr>
+        <tr>
+          <td><button data-fila="1" data-col="0" onclick="jugar(this)">-</button></td>
+          <td><button data-fila="1" data-col="1" onclick="jugar(this)">-</button></td>
+          <td><button data-fila="1" data-col="2" onclick="jugar(this)">-</button></td>
+        </tr>
+        <tr>
+          <td><button data-fila="2" data-col="0" onclick="jugar(this)">-</button></td>
+          <td><button data-fila="2" data-col="1" onclick="jugar(this)">-</button></td>
+          <td><button data-fila="2" data-col="2" onclick="jugar(this)">-</button></td>
+        </tr>
+      </table>
     <script src="comocorreesto.js"></script>
 </body>
 </html>

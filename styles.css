@@ -1,3 +1,15 @@
 head{
     font: 100;
 }
+
+table {
+    border-collapse: collapse;
+}
+td {
+    padding: 5px;
+}
+button {
+    width: 60px;
+    height: 60px;
+    font-size: 18px;
+}
