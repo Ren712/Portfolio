@@ -13,3 +13,47 @@ button {
     height: 60px;
     font-size: 18px;
 }
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f4f4f4;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .celda {
+    font-size: 2.5rem;
+  }
+  
+body {
+    font-family: 'Inter', sans-serif;
+  }
+
+.celda {
+    width: 80px;
+    height: 80px;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+
+  .celda {
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  .celda.x:hover,
+  .celda.o:hover {
+    transform: scale(1.05);
+  }
+  
+  .x {
+    background-color: #e74c3c;
+    color: white;
+  }
+  
+  .o {
+    background-color: #3498db;
+    color: white;
+  }

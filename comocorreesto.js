@@ -1,6 +1,5 @@
 let jugadorActual = "X"; 
-let nuevoColor = "red";
-let text2 = "x";
+let colorAct = "red";
 let tablero = [
     ["", "", ""],
     ["", "", ""],
@@ -55,15 +54,19 @@ let tablero = [
   function jugar(boton) {
     const f = parseInt(boton.dataset.fila);
     const c = parseInt(boton.dataset.col);
+
+    const consola = document.getElementById("cons");
   
     if (tablero[f][c] !== "") return;
   
     tablero[f][c] = jugadorActual;
     boton.textContent = jugadorActual;
-  
+    
+    boton.classList.add(jugadorActual.toLowerCase());
+
     if (hayGanador(f, c, jugadorActual)) {
-      alert("Ganó " + jugadorActual);
+      consola.textContent = ("Ganó " + jugadorActual+ "!!");
     }
-  
+    boton.disabled = true;
     jugadorActual = jugadorActual === "X" ? "O" : "X";
   }
