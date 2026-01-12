@@ -6,6 +6,10 @@ let tablero = [
     ["", "", ""]
   ];
 
+  function reload(){
+      location.reload(); // Esta función recarga la página actual
+  }
+
   function hayGanador(f, c, jugador) {
 
     // 1️⃣ Fila
@@ -51,11 +55,21 @@ let tablero = [
     return false;
   }
   
+  function mostrarPopup(texto) {
+    document.getElementById("mensaje").textContent = texto;
+    document.getElementById("popup1").classList.remove("oculto");
+  }
+  
+  function cerrarPopup(Idx) {
+    document.getElementById(Idx.id).classList.add("oculto");
+  }
+
+  
   function jugar(boton) {
     const f = parseInt(boton.dataset.fila);
     const c = parseInt(boton.dataset.col);
 
-    const consola = document.getElementById("cons");
+    document.getElementById("cons").classList.add("oculto");
   
     if (tablero[f][c] !== "") return;
   
@@ -65,7 +79,7 @@ let tablero = [
     boton.classList.add(jugadorActual.toLowerCase());
 
     if (hayGanador(f, c, jugadorActual)) {
-      consola.textContent = ("Ganó " + jugadorActual+ "!!");
+      mostrarPopup("Ganó " + jugadorActual+ "!!");
     }
     boton.disabled = true;
     jugadorActual = jugadorActual === "X" ? "O" : "X";

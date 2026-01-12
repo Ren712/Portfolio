@@ -1,50 +1,62 @@
 head{
     font: 100;
 }
-
-table {
-    border-collapse: collapse;
-}
 td {
     padding: 5px;
 }
-button {
-    width: 60px;
-    height: 60px;
-    font-size: 18px;
+
+.cuerpo{
+  display: flex;
+  flex-direction: column;   /* uno debajo del otro */
+  align-items: center;      /* centra horizontal */
+  justify-content: center;  /* centra vertical */
+}
+  
+.popup {
+  position: fixed;
+  width: 20%;
+  height: 20%;
+  background: white;
+  padding: 20px 30px;
+  border-radius: 12px;
+  text-align: center;
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center;
 }
 
-body {
-    font-family: 'Inter', sans-serif;
-    background-color: #f4f4f4;
-  }
-  
-  h1 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+.oculto {
+  display: none;
+}
+
+  h1 {    
+    color: #631878;
+    font-family: "Helvetica";
+    font-weight: 400;
+    font-size: 26px;
+    text-decoration: underline;
   }
   
   .celda {
+    width: 80px;
+    height: 80px;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: background-color 0.5s, transform 0.2s;
+    padding: 8px;
+    background: #A1D5E3;
+    border: 2px solid #631878;
+    border-radius: 12px;
     font-size: 2.5rem;
   }
   
 body {
     font-family: 'Inter', sans-serif;
-  }
-
-.celda {
-    width: 80px;
-    height: 80px;
-    font-size: 2rem;
-    cursor: pointer;
-  }
-
-  .celda {
-    transition: background-color 0.3s, transform 0.2s;
+    background-color: rgb(213, 187, 225);
   }
   
-  .celda.x:hover,
-  .celda.o:hover {
+  .celda:hover{
     transform: scale(1.05);
   }
   
@@ -57,3 +69,18 @@ body {
     background-color: #3498db;
     color: white;
   }
+
+  .button-1 {
+    width: 120px;
+    height: 32px;
+    padding: 0px 10px;
+    background: #9C29B7;
+    border: 2px solid #631878;
+    border-radius: 3px;
+    color: #91E4FB;
+    font-family: "Helvetica";
+    font-weight: 400;
+    font-size: 14px;
+    text-align: center;
+  }
+ 

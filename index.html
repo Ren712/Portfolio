@@ -8,8 +8,14 @@
     <title>Page Title</title>
 </head>
 <body>
+  <div id="popup1" class="popup oculto">
+      <p id="mensaje"></p>
+      <button class="button-1" onclick="cerrarPopup(this)">Aceptar</button>
+      <button class="button-1" onclick="reload()">Reiniciar</button>
+  </div>  
+  <div Class="cuerpo">
     <h1>My First Heading</h1>
-    <p id="cons">My first paragraph.</p>
+    <p id="cons">Empieza X</p>
     <table>
         <tr>
           <td><button class="celda" data-fila="0" data-col="0" onclick="jugar(this)">-</button></td>
@@ -27,6 +33,8 @@
           <td><button class="celda" data-fila="2" data-col="2" onclick="jugar(this)">-</button></td>
         </tr>
       </table>
+      <button class="button-1" onclick="reload()">Reiniciar</button>
     <script src="comocorreesto.js"></script>
+  </div>
 </body>
 </html>
