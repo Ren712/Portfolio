@@ -58,12 +58,20 @@ let tablero = [
   function mostrarPopup(texto) {
     document.getElementById("mensaje").textContent = texto;
     document.getElementById("popup1").classList.remove("oculto");
+    pausar();
   }
   
-  function cerrarPopup(Idx) {
-    document.getElementById(Idx.id).classList.add("oculto");
+  function cerrarPopup() {
+    document.getElementById("popup1").classList.add("oculto");
+    reload();
   }
 
+  function pausar(){
+    const elementos = document.querySelectorAll('.celda');
+    elementos.forEach(elemento => {elemento.style.pointerEvents = 'none';});
+    document.getElementById("contenido").classList.add("capa-oscura");
+
+  }
   
   function jugar(boton) {
     const f = parseInt(boton.dataset.fila);

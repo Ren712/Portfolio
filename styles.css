@@ -14,6 +14,9 @@ td {
   
 .popup {
   position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 20%;
   height: 20%;
   background: white;
@@ -49,13 +52,20 @@ td {
     border: 2px solid #631878;
     border-radius: 12px;
     font-size: 2.5rem;
+    z-index: 100;
   }
   
 body {
     font-family: 'Inter', sans-serif;
     background-color: rgb(213, 187, 225);
   }
-  
+
+  .capa-oscura {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* 50% de negro */
+    z-index: 10; /* Asegura que esté por encima */
+}
   .celda:hover{
     transform: scale(1.05);
   }
@@ -83,4 +93,6 @@ body {
     font-size: 14px;
     text-align: center;
   }
+
+
  
