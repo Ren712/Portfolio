@@ -5,6 +5,8 @@ let tablero = [
     ["", "", ""],
     ["", "", ""]
   ];
+let ganadosx = 0;
+let ganadoso = 0;
 
   function reload(){
       location.reload(); // Esta función recarga la página actual
@@ -31,7 +33,6 @@ let tablero = [
     }
   
     // 3️⃣ Diagonal principal
-    if (f === c) {
       if (
         tablero[0][0] === jugador &&
         tablero[1][1] === jugador &&
@@ -39,10 +40,8 @@ let tablero = [
       ) {
         return true;
       }
-    }
   
     // 4️⃣ Diagonal secundaria
-    if (f + c === 2) {
       if (
         tablero[0][2] === jugador &&
         tablero[1][1] === jugador &&
@@ -50,7 +49,6 @@ let tablero = [
       ) {
         return true;
       }
-    }
   
     return false;
   }
@@ -63,7 +61,11 @@ let tablero = [
   
   function cerrarPopup() {
     document.getElementById("popup1").classList.add("oculto");
-    reload();
+    tablero = [
+      ["", "", ""],
+      ["", "", ""],
+      ["", "", ""]
+    ];
   }
 
   function pausar(){
@@ -87,8 +89,16 @@ let tablero = [
     boton.classList.add(jugadorActual.toLowerCase());
 
     if (hayGanador(f, c, jugadorActual)) {
-      mostrarPopup("Ganó " + jugadorActual+ "!!");
+      mostrarPopup("Ganó " + jugadorActual + "!!");
+      if (jugadorActual=="X") {
+        ganadosx++;
+      }else{
+        ganadoso++;
+      }
+      document.getElementById("cons").classList.remove("oculto");
+      document.getElementById("cons").textContent = 'Ganados x:' + ganadosx + '- Ganados o:'+ ganadoso;
     }
+
     boton.disabled = true;
     jugadorActual = jugadorActual === "X" ? "O" : "X";
   }
